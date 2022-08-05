@@ -15,6 +15,14 @@ provider "aws" {
   region  = "ap-southeast-1"
 }
 
+# data "aws_s3_bucket" "mybucket" {
+#   bucket = "existing-bucket-name"
+# }
+
+# output "my_bucket_name" {
+#   value = "${data.aws_s3_bucket.mybucket.bucket}"
+# }
+
 resource "aws_s3_bucket" "mybucket" {
   bucket = "iac-learning-3"
   acl    = "private"
