@@ -1,25 +1,25 @@
 name: Terraform Github Actions
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Terraform-Actions:
     runs-on: ubuntu-latest
     steps:
       - uses: hashicorp/setup-terraform@v2
       
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      
-      - name: Terraform Init
-        id: init
-        run: terraform init
-
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
 
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color
         continue-on-error: true
+
+      - name: Terraform Apply
+        env:
+          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZU76QZIV
+          AWS_SECRET_ACCESS_KEY: 6NYCV5eYd6eKHM6ZpE84htduVFE
+        run: terraform apply -auto-approve
+        continue-on-error: true
+        id: apply     
 
       - name: List files in the repository
         run: |
