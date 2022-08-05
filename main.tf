@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket         = "iac-learning-states"
-    key            = "terraform.tfstate"
+    key            = "state/terraform.tfstate"
     region         = "ap-southeast-1"
   }
 }
