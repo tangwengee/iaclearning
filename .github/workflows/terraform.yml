@@ -16,8 +16,8 @@ jobs:
       - name: Terraform Plan
         id: plan
         env:
-          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZU76QZIV
-          AWS_SECRET_ACCESS_KEY: 6NYCV5eYd6eKHM6ZpE84htduVFE
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: terraform plan
         continue-on-error: true
 

@@ -7,11 +7,17 @@ terraform {
   }
 
   required_version = ">= 0.12.31"
+
+  backend "remote" {
+    organization = "iac_learning"
+
+    workspaces {
+      name = "my-app-prod"
+    }
+  }
 }
 
 provider "aws" {
-  access_key = "AKIAZ36CQFU4ZU76QZIV"
-  secret_key = "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"
   region  = "ap-southeast-1"
 }
 
