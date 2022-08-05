@@ -9,6 +9,10 @@ jobs:
       
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
       - name: Terraform Plan
         id: plan
         env:
