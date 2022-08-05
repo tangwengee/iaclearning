@@ -12,7 +12,7 @@ jobs:
       - name: Terraform Init
         env:
           AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZU76QZIV
-          AWS_SECRET_ACCESS_KEY: 6NYCV5eYd6eKHM6ZpE84htduVFE
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         id: init
         run: terraform init
 
