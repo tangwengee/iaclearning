@@ -11,8 +11,8 @@ jobs:
 
       - name: Terraform Init
         env:
-          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZU76QZIV
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZBB2NCH4
+          AWS_SECRET_ACCESS_KEY: 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
         id: init
         run: terraform init
 
@@ -23,8 +23,8 @@ jobs:
 
       - name: Terraform Apply
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZBB2NCH4
+          AWS_SECRET_ACCESS_KEY: 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
         run: terraform apply -auto-approve
         continue-on-error: true
         id: apply     
