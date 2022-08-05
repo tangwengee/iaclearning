@@ -8,12 +8,10 @@ terraform {
 
   required_version = ">= 0.12.31"
 
-  backend "remote" {
-    organization = "iac_learning"
-
-    workspaces {
-      name = "my-app-prod"
-    }
+  backend "s3" {
+    bucket         = "iac-learning-states"
+    key            = "terraform.tfstate"
+    region         = "ap-southeast-1"
   }
 }
 
