@@ -10,7 +10,10 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color
+        env:
+          AWS_ACCESS_KEY_ID: AKIAZ36CQFU4ZU76QZIV
+          AWS_SECRET_ACCESS_KEY: 6NYCV5eYd6eKHM6ZpE84htduVFE
+        run: terraform plan
         continue-on-error: true
 
       - name: Terraform Apply
