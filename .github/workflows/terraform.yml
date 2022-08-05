@@ -4,6 +4,7 @@ jobs:
   Terraform-Actions:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v2
       
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
