@@ -1,12 +1,4 @@
 terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-
-  required_version = ">= 0.12.31"
 
   backend "s3" {
     bucket         = "iac-learning-states"
@@ -16,6 +8,8 @@ terraform {
 }
 
 provider "aws" {
+  source  = "hashicorp/aws"
+  version = "~> 3.0"
   region  = "ap-southeast-1"
 }
 
