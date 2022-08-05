@@ -1,0 +1,28 @@
+name: Terraform Github Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hashicorp/setup-terraform@v2
+      
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color
+        continue-on-error: true
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
