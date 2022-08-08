@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     bucket         = "iac-learning-states"
     key            = "state/terraform.tfstate"
-    shared_credentials_file = "~/.aws/credentials"
+    # shared_credentials_file = "~/.aws/credentials"
     # access_key = "AKIAZ36CQFU4ZBB2NCH4"
     # secret_key = "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"
     region         = "ap-southeast-1"
@@ -19,7 +19,7 @@ terraform {
 }
 
 provider "aws" {
-  shared_credentials_file = "~/.aws/credentials"
+  # shared_credentials_file = "~/.aws/credentials"
   # access_key = "AKIAZ36CQFU4ZBB2NCH4"
   # secret_key = "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"
   region  = "ap-southeast-1"
