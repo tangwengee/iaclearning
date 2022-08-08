@@ -11,8 +11,8 @@ jobs:
 
       - name: AWS Credentials Configuration
         run: |
-          mkdir -p ../../.aws
-          touch ../../.aws/credentials
+          mkdir -p /home/runner/.aws
+          touch /home/runner/.aws/credentials
 
           echo "[default]
           aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
