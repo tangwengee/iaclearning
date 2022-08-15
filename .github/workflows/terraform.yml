@@ -15,22 +15,15 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
-          mkdir -p ~/.aws
-          touch ~/.aws/credentials
+          mkdir -p $HOME/.aws
+          touch $HOME/.aws/credentials
 
           echo "[default]
           aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          " > ~/.aws/credentials 
+          " > $HOME/.aws/credentials 
 
-          echo "$(< ~/.aws/credentials )" 
-
-          echo "[default]
-          region = ${{ secrets.AWS_REGION }}
-          output=json
-          " > ~/.aws/config 
-
-          echo "$(< ~/.aws/config )" 
+          echo "$(< $HOME/.aws/credentials )" 
 
           set AWS_ACCESS_KEY_ID= ${{ secrets.AWS_ACCESS_KEY_ID }}
           set AWS_SECRET_ACCESS_KEY= ${{ secrets.AWS_SECRET_ACCESS_KEY }}
