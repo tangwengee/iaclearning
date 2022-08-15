@@ -36,8 +36,8 @@ jobs:
           set AWS_SECRET_ACCESS_KEY= ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           set AWS_REGION= ${{ secrets.AWS_REGION }}
 
-          aws configure get aws_access_key_id
-          aws configure get aws_secret_access_key
+          echo"aws configure get aws_access_key_id"
+          echo"aws configure get aws_secret_access_key"
 
 
       - name: Terraform Init
