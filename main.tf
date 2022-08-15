@@ -11,14 +11,12 @@ terraform {
   backend "s3" {
     bucket         = "iac-learning-states"
     key            = "state/terraform.tfstate"
-    shared_credentials_file = "~/.aws/credentials"
-    region         = "ap-southeast-1"
+    shared_credentials_file = "~/.aws/config"
   }
 }
 
 provider "aws" {
-    shared_credentials_file = "~/.aws/credentials"
-  region  = "ap-southeast-1"
+    shared_credentials_file = "~/.aws/config"
 }
 
 # data "aws_s3_bucket" "mybucket" {
