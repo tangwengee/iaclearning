@@ -12,16 +12,12 @@ terraform {
     bucket         = "iac-learning-states"
     key            = "state/terraform.tfstate"
     shared_credentials_file = "~/.aws/credentials"
-    # access_key = "AKIAXDEGJZYY2T57Z4PW"
-    # secret_key = "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"
     region         = "ap-southeast-1"
   }
 }
 
 provider "aws" {
     shared_credentials_file = "~/.aws/credentials"
-    # access_key = "AKIAXDEGJZYY2T57Z4PW"
-    # secret_key = "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"
   region  = "ap-southeast-1"
 }
 
