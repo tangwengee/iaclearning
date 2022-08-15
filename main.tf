@@ -9,7 +9,7 @@ terraform {
   required_version = ">= 0.12.31"
 
   backend "s3" {
-    bucket         = "iac-learning-states"
+    bucket         = "iac-learning-states2"
     key            = "state/terraform.tfstate"
     region         = "ap-southeast-1"
   }
