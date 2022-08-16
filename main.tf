@@ -28,7 +28,7 @@ provider "aws" {
 # }
 
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "iac-learning-3"
+  bucket = "iac-learning-4"
   acl    = "private"
   # Add specefic S3 policy in the s3-policy.json on the same directory
   #policy = file("s3-policy.json")
@@ -132,11 +132,11 @@ output "fileset-results" {
 }
 
 locals {
-  s3_origin_id = "iac-learning-3"
+  s3_origin_id = "iac-learning-4"
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
-  comment = "iac-learning-3"
+  comment = "iac-learning-4"
 }
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
